@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherPro - Pronóstico Meteorológico Completo</title>
+    <link rel="icon" href="./img/wheather.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="./images/weather.png" alt="Logo Weather App" width="70px">
+                </div>
+                <div>
+                    <h1>Weather App</h1>
+                    <p class="subtitle">Pronóstico meteorológico completo mundial</p>
+                </div>
+            </div>
+            <form class="search-container" id="searchForm">
+                <label for="locationInput" class="visually-hidden">Buscar ciudad o coordenadas</label>
+                <input type="text" class="search-input" id="locationInput" placeholder="Buscar ciudad o coordenadas...">
+                <button type="submit" class="btn" id="searchBtn">🔍 Buscar</button>
+                <button type="button" class="btn btn-secondary" id="locationBtn">📍 Mi ubicación</button>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <section class="weather-grid" aria-label="Pronóstico meteorológico actual y por horas">
+            <article class="card" aria-label="Tiempo actual">
+                <h2 class="card-title">
+                    <span>🌡️</span>
+                    Tiempo Actual
+                </h2>
+                <div id="currentWeather">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        <p>Cargando datos meteorológicos...</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" aria-label="Pronóstico por horas">
+                <h2 class="card-title">
+                    <span>⏱️</span>
+                    Pronóstico por Horas
+                </h2>
+                <div id="hourlyForecast">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        <p>Cargando pronóstico horario...</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="daily-forecast" aria-label="Pronóstico semanal">
+            <article class="card">
+                <h2 class="card-title">
+                    <span>📅</span>
+                    Pronóstico de 7 Días
+                </h2>
+                <div id="dailyForecast">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        <p>Cargando pronóstico semanal...</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p><img src="./images/weather.png" alt="" width="50px"> </p>
+            <p>2023 WeatherApp. Todos los derechos reservados.</p>
+            <p>Desarrollado por Ana Lucía Silva Córdoba</p>
+            <p><a href="mailto:alusilvacordoba@gmail.com">Contacto</a></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="./script/api.js"></script>
+    <script type="module" src="./script/script.js"></script>
+</body>
+</html>
